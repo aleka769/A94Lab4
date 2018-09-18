@@ -1,9 +1,9 @@
 linreg_class <- setRefClass("linreg",
   fields = list(beta_hat      = "numeric",
-                #"fits"          = "numeric",
-                #"residuals"     = "numeric",
-                #"std_residuals" = "numeric",
-                #"df"            = "numeric",
+                fits          = "numeric",
+                residuals     = "numeric",
+                std_residuals = "numeric",
+                df            = "numeric",
                 call          = "character"
                 )
 )
