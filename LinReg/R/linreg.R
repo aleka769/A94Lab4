@@ -1,3 +1,14 @@
+#' @title Yep
+#' 
+#' @param formula an object of class "formula", a symbolic description of the model to be fitted.
+#' 
+#' @param data the data frame including variables to include in the model.
+#' 
+#' @return \code{linreg} does calculations for RC list specified outside of function and returns values for the list's \code{fields}
+#' 
+#' @export
+
+
 linreg <- function(formula, data){
   
   # Set-up of vars, matrices and formula:

@@ -1,11 +1,13 @@
 Package: LinReg
 Type: Package
-Title: What the package does (short line)
+Title: Package solves lab 4 of course 732A94, Linkopings University, autumn 2018.
 Version: 1.0
 Date: 2018-09-18
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Gustav Lundberg, Faton Rekathati, Alexander Karlsson
+Maintainer: Alexander Karlsson <aleka769@student.liu.se>
+Description: Package containing calculations for linear regression, including OLS and QR decomposition.
+License: MIT + file LICENSE
 RoxygenNote: 6.1.0
+Suggests: testthat
 Encoding: UTF-8
+LazyData: true
