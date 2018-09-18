@@ -1,3 +1,9 @@
+#' @title Class formatting for RC type object.  
+#' 
+#' @description this list will be filled with objects calculated in \code{linreg()}-function
+#' 
+#' @export
+
 linreg_class <- setRefClass("linreg",
   fields = list(beta_hat      = "matrix",
                 fits          = "numeric",
@@ -6,6 +12,7 @@ linreg_class <- setRefClass("linreg",
                 call          = "formula"
                 )
 )
+
 linreg_class$methods(
   "initialize"= function(beta_hat, fits, residuals, df, call){
       .self$beta_hat <- beta_hat
