@@ -1,15 +1,17 @@
 linreg_class <- setRefClass("linreg",
-  fields = list(beta_hat      = "numeric",
+  fields = list(beta_hat      = "matrix",
                 fits          = "numeric",
                 residuals     = "numeric",
-                std_residuals = "numeric",
                 df            = "numeric",
-                call          = "character"
+                call          = "formula"
                 )
 )
 linreg_class$methods(
-  "initialize"= function(beta_hat, call){
+  "initialize"= function(beta_hat, fits, residuals, df, call){
       .self$beta_hat <- beta_hat
+      .self$fits <- fits           
+      .self$residuals <- residuals      
+      .self$df <- df     
       .self$call <- call
       },
   "print" = function(){
