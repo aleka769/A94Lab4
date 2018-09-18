@@ -54,7 +54,7 @@ linreg_class$methods(
       res_vs_fitted <- ggplot2::ggplot(data = plot_data,
                                        ggplot2::aes(x = fits,
                                                     y = residuals)) +
-          # theme_liu() +
+          theme_bw() +
           ggplot2::labs("title" = "Residuals vs Fitted",
                         "x" = paste("Fitted values\nlinreg(",
                                     deparse(formula),")"),
@@ -64,7 +64,7 @@ linreg_class$methods(
       std_vs_fitted <- ggplot2::ggplot(data = plot_data,
                                        ggplot2::aes(x = fits,
                                                     y = std_residuals)) +
-          # theme_liu() +
+          theme_bw() +
           ggplot2::labs("title" = "Scale-Location",
                         "x" = paste("Fitted values\nlinreg(",
                                     deparse(formula),")"),
