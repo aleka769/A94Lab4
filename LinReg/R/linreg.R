@@ -4,7 +4,7 @@
 #'
 #' @param data the data frame including variables to include in the model.
 #'
-#' @return \code{linreg} does calculations for RC object specified outside of function and returns values for the object's \code{fields}
+#' @return \code{linreg()} returns a linreg-object with common model-methods like coef, resid, plot etc.
 #'
 #' @export
 
@@ -27,8 +27,8 @@ linreg <- function(formula, data){
   varb    <- resvar * solve(t(X) %*% X)
   tbeta   <- bhat / sqrt(diag(varb))
   pbeta   <- 1 - pt(q = tbeta, df = df)
-  
-  betadf  <- data.frame("Variance" = diag(varb),  
+
+  betadf  <- data.frame("Variance" = diag(varb),
                         "t_value"  = tbeta,
                         "p_value"  = pbeta)
   class(betadf)
