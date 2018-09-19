@@ -4,8 +4,28 @@
 \name{linreg-class}
 \alias{linreg-class}
 \alias{linreg_class}
-\title{Class formatting for RC type object.}
+\title{RC type object to represent linreg-data.}
 \description{
-this list will be filled with objects calculated in \code{linreg()}-function
+linreg object holds data and methods for data calculated in \code{linreg()}-function.
 }
+\section{Fields}{
+
+\describe{
+\item{\code{beta_hat}}{Estimates for each beta}
+
+\item{\code{fits}}{Contains fitted values}
+
+\item{\code{residuals}}{Contains residuals, i.e. observed - fitted}
+
+\item{\code{resid_var}}{Residual variance}
+
+\item{\code{beta_info}}{Contains variance, t-value and p-value for each estimated beta value}
+
+\item{\code{df}}{Degrees of freedom for the model}
+
+\item{\code{formula}}{Formula used in model}
+
+\item{\code{call}}{Call sent to \code{linreg()}}
+}}
+
 

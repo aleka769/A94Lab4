@@ -12,7 +12,7 @@ linreg(formula, data)
 \item{data}{the data frame including variables to include in the model.}
 }
 \value{
-\code{linreg} does calculations for RC list specified outside of function and returns values for the list's \code{fields}
+\code{linreg()} returns a linreg-object with common model-methods like coef, resid, plot etc.
 }
 \description{
 Yep
