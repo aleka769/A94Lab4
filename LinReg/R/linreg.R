@@ -22,7 +22,7 @@ linreg <- function(formula, data){
   bhat    <- solve(t(X) %*% X) %*% t(X) %*% y
   yhat    <- as.vector(X %*% bhat)
   resid   <- y - yhat
-  df      <- nrow(X) - (ncol(X) - 1)
+  df      <- nrow(X) - ncol(X)
   resvar  <- as.vector((t(resid) %*% resid) / df)
   varb    <- resvar * solve(t(X) %*% X)
   tbeta   <- bhat / sqrt(diag(varb))
