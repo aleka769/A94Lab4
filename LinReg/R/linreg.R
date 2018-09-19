@@ -27,12 +27,17 @@ linreg <- function(formula, data){
   varb    <- resvar * solve(t(X) %*% X)
   tbeta   <- bhat / sqrt(diag(varb))
   pbeta   <- 1 - pt(q = tbeta, df = df)
-
-
+  
+  betadf  <- data.frame("Variance" = diag(varb),  
+                        "t_value"  = tbeta,
+                        "p_value"  = pbeta)
+  class(betadf)
   # Return list, input to RC list ("linreg_class"):
   retlist <- linreg_class$new(beta_hat  = t(bhat)[1,],
                               fits      = yhat,
                               residuals = resid,
+                              resid_var = resvar, #
+                              beta_info = betadf, #
                               df        = df,
                               formula   = f,
                               call      = deparse(sys.call()))
