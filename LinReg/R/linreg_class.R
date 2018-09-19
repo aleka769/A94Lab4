@@ -1,6 +1,22 @@
-#' @title Class formatting for RC type object.
+#' @title RC type object to represent linreg-data.
 #'
-#' @description this list will be filled with objects calculated in \code{linreg()}-function
+#' @description linreg object holds data and methods for data calculated in \code{linreg()}-function.
+#'
+#' @field beta_hat Estimates for each \beta
+#' @field fits Contains fitted values
+#' @field residuals Contains residuals, i.e. observed - fitted
+#' @field resid_var Residual variance
+#' @field beta_info Contains variance, t-value and p-value for each estimated \beta value
+#' @field df Degrees of freedom for the model
+#' @field formula Formula used in model
+#' @field call Call sent to \code{linreg()}
+#'
+#' @describeIn print Prints the cal and coefficient estimates
+#' @describeIn summary Prints a summary of the model including esimates and their variances, t-values and p-values as well as the degrees of freedom and residual variance
+#' @describeIn plot Produces plots of residuals and standardized residuals vs fitted values
+#' @describeIn coef Returns \beta estimates
+#' @describeIn resid Returns residual vector from the model
+#' @describeIn pred Retrns fitted values from the model
 #'
 #' @export
 
@@ -77,6 +93,7 @@ linreg_class$methods(
 
       gridExtra::grid.arrange(res_vs_fitted, std_vs_fitted, nrow = 2)
   },
+
   "summary" = function(){
       beta_data <- cbind("Estimate"=beta_hat,
                          "Std.Err" = sqrt(beta_info$Variance),
