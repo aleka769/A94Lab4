@@ -5,7 +5,7 @@
 #' @export
 
 linreg_class <- setRefClass("linreg",
-  fields = list(beta_hat      = "numeric",
+  fields = list(beta_hat      = "snumeric",
                 fits          = "numeric",
                 residuals     = "numeric",
                 resid_var     = "numeric",
@@ -76,7 +76,27 @@ linreg_class$methods(
           ggplot2::geom_point()
 
       gridExtra::grid.arrange(res_vs_fitted, std_vs_fitted, nrow = 2)
-      }
+  },
+  "summary" = function(){
+      beta_data <- cbind("Estimate"=beta_hat,
+                         "Std.Err" = sqrt(beta_info$Variance),
+                         "t_value" = beta_info$t_value,
+                         "p_value" = beta_info$p_value
+                         )
+      # Removed since df's/vectors are only printed of they are called last...
+      # resid_data <- c(quantile(residuals, probs = c(0,0.25,0.5,0.75,1)))
+      # names(resid_data) <- c("Min","Q1","Median","Q3","Max")
 
-    # summary <- function(){}
+      cat("Call:\n",
+          deparse(call),
+          "\n\nVariance:",
+          signif(resid_var,3),
+          ",   Degrees of freedom: ",
+          df,
+          "\n\nCoefficients:\n",
+          sep = ""
+      )
+
+      format(round(beta_data,2))
+  }
 )
