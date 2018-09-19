@@ -26,7 +26,7 @@ linreg <- function(formula, data){
   resvar  <- as.vector((t(resid) %*% resid) / df)
   varb    <- resvar * solve(t(X) %*% X)
   tbeta   <- bhat / sqrt(diag(varb))
-  pbeta   <- 1 - pt(q = tbeta, df = df)
+  pbeta   <- 1 - pt(q = abs(tbeta), df = df)
 
   betadf  <- data.frame("Variance" = diag(varb),
                         "t_value"  = tbeta,
