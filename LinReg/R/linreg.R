@@ -36,8 +36,8 @@ linreg <- function(formula, data){
   retlist <- linreg_class$new(beta_hat  = t(bhat)[1,],
                               fits      = yhat,
                               residuals = resid,
-                              resid_var = resvar, #
-                              beta_info = betadf, #
+                              resid_var = resvar,
+                              beta_info = betadf,
                               df        = df,
                               formula   = f,
                               call      = deparse(sys.call()))
