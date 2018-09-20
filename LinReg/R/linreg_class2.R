@@ -13,7 +13,7 @@
 #' @field call Call sent to \code{linreg()}
 #'
 #'
-#' @export
+#' @export linreg
 
 linreg <- setRefClass("linreg",
                       fields = list(beta_hat      = "numeric",
