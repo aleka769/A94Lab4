@@ -1,0 +1,29 @@
+---
+title: "Intro to LinReg"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Intro to LinReg}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+```{r, echo = FALSE, message = FALSE}
+knitr::opts_chunk$set(collapse = T, comment = "#>")
+options(tibble.print_min = 4L, tibble.print_max = 4L)
+library(dplyr)
+library(ggplot2)
+set.seed(1014)
+```
+
+When working with linear regression models you must:
+
+* Let the computer do the calculations (much faster!)
+
+* Describe the formula for the model and specify data
+
+* Execute the program
+
+The LinReg package makes these steps fast and easy. This document introduces you to LinReg's basic set of tools, and shows you how to apply them to your dataset.
+
+## Example
+

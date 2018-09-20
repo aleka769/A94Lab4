@@ -8,7 +8,8 @@ Maintainer: Alexander Karlsson <aleka769@student.liu.se>
 Description: Package containing calculations for linear regression, including OLS and QR decomposition.
 License: MIT + file LICENSE
 RoxygenNote: 6.1.0
-Suggests: testthat
+Suggests: testthat, knitr, rmarkdown
+VignetteBuilder: knitr
 Encoding: UTF-8
 LazyData: true
 Imports: 
