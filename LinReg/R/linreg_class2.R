@@ -2,6 +2,7 @@
 #'
 #' @description linreg object holds data and methods for data calculated in \code{linreg()}-function.
 #' 
+#' @importFrom gridExtra grid.arrange
 #'
 #' @field beta_hat Estimates for each beta
 #' @field fits Contains fitted values
