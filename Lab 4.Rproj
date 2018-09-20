@@ -15,5 +15,5 @@ LaTeX: pdfLaTeX
 BuildType: Package
 PackageUseDevtools: Yes
 PackagePath: LinReg
-PackageInstallArgs: --no-multiarch --with-keep.source --library=\\ad.liu.se\home\aleka769\Documents\R
+PackageInstallArgs: --no-multiarch --with-keep.source --library=
 PackageRoxygenize: rd,collate,namespace,vignette

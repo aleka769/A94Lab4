@@ -14,6 +14,8 @@
 #'
 #'
 #' @export linreg
+#' @exportClass linreg
+
 
 linreg <- setRefClass("linreg",
                       fields = list(beta_hat      = "numeric",
