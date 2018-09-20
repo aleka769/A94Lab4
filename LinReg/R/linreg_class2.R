@@ -12,8 +12,9 @@
 #' @field formula Formula used in model
 #' @field call Call sent to \code{linreg()}
 #'
-#'
+#' 
 #' @export linreg
+#' @exportClass linreg
 
 linreg <- setRefClass("linreg",
                       fields = list(beta_hat      = "numeric",
@@ -23,7 +24,8 @@ linreg <- setRefClass("linreg",
                                     beta_info     = "data.frame",
                                     df            = "numeric",
                                     formula       = "formula",
-                                    call          = "character"
+                                    call          = "character",
+                                    na.action     = "character"
                       )
 )
 
@@ -88,7 +90,7 @@ linreg$methods(
   "plot" = function(){
     plot_data <- data.frame(residuals,
                             fits,
-                            std_residuals = sqrt(abs(residuals/sqrt(resid_var))))
+                            std_residuals = sqrt(abs(.self$residuals/sqrt(resid_var))))
     
     res_vs_fitted <- ggplot2::ggplot(data = plot_data,
                                      ggplot2::aes(x = fits,
@@ -135,3 +137,71 @@ linreg$methods(
   }
   
 )
+
+
+#' Plot linreg object
+#'
+#' @param x A linreg object
+#' @param ... Added for consistency with the default plot
+#'
+#' @return A residual plot (ggplot2 object)
+#' @export
+plot.linreg <- function(x, ...){
+  x$plot()
+}
+
+#' Print linreg object
+#'
+#' @param x A linreg object
+#' @param ... Additional arguments
+#'
+#' @return Prints the function call and regression coefficients
+#' @export
+print.linreg <- function(x, ...){
+  x$print()
+}
+
+
+#' Extract residuals from linrej object
+#'
+#' @param object A linreg object
+#' @param ... Additional arguments
+#'
+#' @return Numeric vector of residuals
+#' @export
+residuals.linreg <- function(object, ...){
+  object$resid()
+}
+
+#' Predictions from linreg object
+#'
+#' @param object A linreg object
+#' @param ... Additional arguments
+#'
+#' @return Numeric vector of predictions
+#' @export
+predict.linreg <- function(object, ...){
+  object$pred()
+}
+
+#' Regression coefficients from linreg object
+#'
+#' @param object A linreg object
+#' @param ... Additional arguments
+#'
+#' @return Numeric vector of regression coefficients
+#' @export
+coef.linreg <- function(object, ...){
+  object$coef()
+}
+
+#' Summary of linreg object
+#'
+#' @param object A linreg object
+#' @param ... Additional arguments
+#'
+#' @return Prints coefs, se(coefs), t-value, p-value.
+#' @export
+summary.linreg <- function(object, ...){
+  object$summary()
+}
