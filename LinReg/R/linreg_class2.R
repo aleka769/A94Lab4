@@ -2,6 +2,7 @@
 #'
 #' @description linreg object holds data and methods for data calculated in \code{linreg()}-function.
 #' 
+#' @importFrom gridExtra grid.arrange
 #'
 #' @field beta_hat Estimates for each beta
 #' @field fits Contains fitted values
@@ -15,6 +16,10 @@
 #' 
 #' @export linreg
 #' @exportClass linreg
+<<<<<<< HEAD
+=======
+
+>>>>>>> fcd373649723805a1e639e1ba8010313d3ea4bf8
 
 linreg <- setRefClass("linreg",
                       fields = list(beta_hat      = "numeric",
