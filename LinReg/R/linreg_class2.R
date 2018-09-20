@@ -138,3 +138,70 @@ linreg$methods(
   }
   
 )
+
+#' Plot linreg object
+#'
+#' @param x A linreg object
+#' @param ... Added for consistency with the default plot
+#'
+#' @return A residual plot (ggplot2 object)
+#' @export
+plot.linreg <- function(x, ...){
+  x$plot()
+}
+
+#' Print linreg object
+#'
+#' @param x A linreg object
+#' @param ... Additional arguments
+#'
+#' @return Prints the function call and regression coefficients
+#' @export
+print.linreg <- function(x, ...){
+  x$print()
+}
+
+
+#' Extract residuals from linrej object
+#'
+#' @param object A linreg object
+#' @param ... Additional arguments
+#'
+#' @return Numeric vector of residuals
+#' @export
+residuals.linreg <- function(object, ...){
+  object$resid()
+}
+
+#' Predictions from linreg object
+#'
+#' @param object A linreg object
+#' @param ... Additional arguments
+#'
+#' @return Numeric vector of predictions
+#' @export
+predict.linreg <- function(object, ...){
+  object$pred()
+}
+
+#' Regression coefficients from linreg object
+#'
+#' @param object A linreg object
+#' @param ... Additional arguments
+#'
+#' @return Numeric vector of regression coefficients
+#' @export
+coef.linreg <- function(object, ...){
+  object$coef()
+}
+
+#' Summary of linreg object
+#'
+#' @param object A linreg object
+#' @param ... Additional arguments
+#'
+#' @return Prints coefs, se(coefs), t-value, p-value.
+#' @export
+summary.linreg <- function(object, ...){
+  object$summary()
+}
