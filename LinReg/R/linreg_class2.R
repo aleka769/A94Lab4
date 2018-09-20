@@ -1,6 +1,7 @@
-#' @title RC type object to represent linreg-data.
+#'  RC type object to represent linreg-data.
 #'
 #' @description linreg object holds data and methods for data calculated in \code{linreg()}-function.
+#' 
 #'
 #' @field beta_hat Estimates for each beta
 #' @field fits Contains fitted values
@@ -57,18 +58,15 @@ linreg$methods(
     .self$beta_info <- betadf
     .self$df <- df_temp
     .self$formula <- f
-    .self$call <- deparse(sys.call())
+    .self$call <- deparse(sys.call(which = 1)) # get call from parent
   },
   
   #' @describeIn print Prints the cal and coefficient estimates
   "print" = function(){
-    cat("Call:\n",
-        deparse(call),
-        "\n\n",
-        "Coefficients:\n",
-        sep = ""
-    )
-    format(signif(beta_hat,3))
+    
+    cat(noquote(call), "\n")
+    cat(capture.output(beta_hat)[1], "\n", sep = " ")
+    cat(capture.output(beta_hat)[2], "\n", sep = " ")
   },
   
   #' @describeIn coef Returns beta estimates
@@ -123,16 +121,17 @@ linreg$methods(
                        "p_value" = round(beta_info$p_value,3)
     )
     
-    cat(paste(capture.output(beta_data),sep="\n")[-1],sep="\n")
+    for (i in 1:nrow(beta_data)){
+      # first captured output is colnames which we ignore
+      cat(capture.output(beta_data)[i+1], sep = "\n")
+    }
     
     cat("Residual standard error: ",
         signif(sqrt(resid_var),3),
-        "on ",
+        " on ",
         df,
-        " degrees of freedom"
+        " degrees of freedom ", sep = ""
     )
   }
   
 )
-
-
