@@ -1,7 +1,9 @@
 ## ---- echo = FALSE, message = FALSE--------------------------------------
 knitr::opts_chunk$set(collapse = T, comment = "#>")
-options(tibble.print_min = 4L, tibble.print_max = 4L)
-library(dplyr)
 library(ggplot2)
+library(LinReg)
 set.seed(1014)
+
+## ---- echo = TRUE, message = FALSE---------------------------------------
+linreg(formula = Sepal.Width ~ Sepal.Length, data = iris)
 
