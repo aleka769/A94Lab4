@@ -26,8 +26,7 @@ Maintainer: \packageMaintainer{LinReg}
 }
 \keyword{ package }
 \seealso{
-~~ Optional links to other man pages, e.g. ~~
-~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
+  Optional links to other man pages, e.g.
 }
 \examples{
 
