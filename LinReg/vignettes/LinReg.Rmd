@@ -7,7 +7,7 @@ vignette: >
   \usepackage[utf8]{inputenc}
 ---
 
-```{r, echo = FALSE, message = FALSE}
+```{r, echo = FALSE, message = FALSE, warning=FALSE}
 knitr::opts_chunk$set(collapse = T, comment = "#>")
 library(ggplot2)
 library(gridExtra)
@@ -33,14 +33,14 @@ Type in formula and data as input to `linreg`-function.
 mod <- linreg(formula = Sepal.Width ~ Sepal.Length, data = iris)
 ```
 
-For beta coefficients, use `$print()` as follows:
+For beta coefficients, use `print()` as follows:
 
-```{r, echo = TRUE, message = FALSE}
-mod$print()
+```{r, echo = TRUE, message = FALSE, warning=FALSE}
+print(mod)
 ```
 
-For residuals plot, use `$plot()` as follows:
+For residuals plot, use `plot()` as follows:
 
 ```{r, echo = TRUE, message = FALSE}
-mod$plot()
+plot(mod)
 ```
