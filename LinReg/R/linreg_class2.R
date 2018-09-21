@@ -96,22 +96,26 @@ linreg$methods(
     res_vs_fitted <- ggplot2::ggplot(data = plot_data,
                                      ggplot2::aes(x = fits,
                                                   y = residuals)) +
-      ggplot2::theme_bw() +
+      LinReg::theme_liu() +
+      #ggplot2::theme_bw()+
       ggplot2::labs("title" = "Residuals vs Fitted",
                     "x" = paste("Fitted values\nlinreg(",
                                 deparse(formula),")"),
                     "y" = "Residuals") +
+      ggplot2::geom_smooth(method = "loess", color="#16C7D2", se=FALSE)+
       ggplot2:: geom_point()
     
     std_vs_fitted <- ggplot2::ggplot(data = plot_data,
                                      ggplot2::aes(x = fits,
                                                   y = std_residuals)) +
-      ggplot2::theme_bw() +
+      LinReg::theme_liu() +
+      #ggplot2::theme_bw()+
       ggplot2::labs("title" = "Scale-Location",
                     "x" = paste("Fitted values\nlinreg(",
                                 deparse(formula),")"),
                     "y" = expression(sqrt("|Standardized residual|"))) +
-      ggplot2::geom_point()
+      ggplot2::geom_smooth(method = "loess", color="#16C7D2", se=FALSE)+
+      ggplot2:: geom_point()
     
     gridExtra::grid.arrange(res_vs_fitted, std_vs_fitted, nrow = 2)
   },
