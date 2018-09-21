@@ -97,7 +97,7 @@ linreg$methods(
                                      ggplot2::aes(x = fits,
                                                   y = residuals)) +
       LinReg::theme_liu() +
-      #ggplot2::theme_bw()+
+      # ggplot2::theme_bw()+
       ggplot2::labs("title" = "Residuals vs Fitted",
                     "x" = paste("Fitted values\nlinreg(",
                                 deparse(formula),")"),
@@ -109,7 +109,7 @@ linreg$methods(
                                      ggplot2::aes(x = fits,
                                                   y = std_residuals)) +
       LinReg::theme_liu() +
-      #ggplot2::theme_bw()+
+      # ggplot2::theme_bw()+
       ggplot2::labs("title" = "Scale-Location",
                     "x" = paste("Fitted values\nlinreg(",
                                 deparse(formula),")"),
