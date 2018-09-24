@@ -1,4 +1,4 @@
-#' Linkoping University theme
+#' Linkoping University theme, with official LiU colors.
 #' @importFrom ggplot2 theme_bw theme element_line element_rect element_blank element_text margin
 #' 
 #' @return A ggplot theme

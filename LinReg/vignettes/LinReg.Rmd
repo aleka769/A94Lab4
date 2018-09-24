@@ -9,6 +9,9 @@ vignette: >
 
 ```{r, echo = FALSE, message = FALSE, warning=FALSE}
 knitr::opts_chunk$set(collapse = T, comment = "#>")
+```
+
+```{r, echo = FALSE, message = FALSE, warning=FALSE}
 library(ggplot2)
 library(gridExtra)
 library(LinReg)
@@ -22,7 +25,11 @@ When working with linear regression models you must:
 
 * Execute the program
 
-The LinReg package makes these steps fast and easy. This document introduces you to LinReg's basic set of tools, and shows you how to apply them to your dataset.
+The LinReg package makes these steps fast and easy. Linear regression is expressed as follows:
+
+$Y  = \beta_0 + \beta_1 \cdot x_1 + ... + \beta_k \cdot x_k + \epsilon$
+
+This document introduces you to LinReg's basic set of tools, and shows you how to apply them to your dataset.
 
 ## Examples, how-to:
 

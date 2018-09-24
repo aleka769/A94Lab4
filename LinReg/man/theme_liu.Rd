@@ -2,7 +2,7 @@
 % Please edit documentation in R/liu_theme.R
 \name{theme_liu}
 \alias{theme_liu}
-\title{Linkoping University theme}
+\title{Linkoping University theme, with official LiU colors.}
 \usage{
 theme_liu()
 }
@@ -10,5 +10,5 @@ theme_liu()
 A ggplot theme
 }
 \description{
-Linkoping University theme
+Linkoping University theme, with official LiU colors.
 }
